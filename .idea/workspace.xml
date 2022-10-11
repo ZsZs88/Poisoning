@@ -5,30 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8cb6b456-2bcf-4071-98f6-7cf154a95a31" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/hasher.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/poisoner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Poisoning.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Poisoning.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poisoning.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Poisoning.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/arm_attacker_test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/arm_datasets/arm_attacker_test.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/arm_attacker_training.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/arm_datasets/arm_attacker_training.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/arm_attacker_validation.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/arm_datasets/arm_attacker_validation.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/arm_victim_test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/arm_datasets/arm_victim_test.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/arm_victim_training.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/arm_datasets/arm_victim_training.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/arm_victim_validation.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/arm_datasets/arm_victim_validation.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/benign_arm.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/benign_mips.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/int_benign_arm.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/int_benign_mips.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/int_malware_arm.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/int_malware_mips.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/malware_arm.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/malware_mips.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/mips_attacker_test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/mips_datasets/mips_attacker_test.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/mips_attacker_training.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/mips_datasets/mips_attacker_training.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/mips_attacker_validation.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/mips_datasets/mips_attacker_validation.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/mips_victim_test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/mips_datasets/mips_victim_test.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/mips_victim_training.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/mips_datasets/mips_victim_training.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/mips_victim_validation.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/mips_datasets/mips_victim_validation.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/poisoned_benign_malware100.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/poison_data/poisoned_benign_malware100.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/poisoned_malware_benign100.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/poison_data/poisoned_malware_benign100.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,28 +41,74 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2FBaBqLUeSNgfKUwjcHZMU5UNre" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "Z:/OneDrive - Schönherz Zoltán Kollégium/Egyetem/2022-23 1. (osz)/Szakdoga/Poisoning/files/arm_datasets",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.notebooks.jupyter.connections.configuration.JupyterServerConfigurable"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/poisoner.py" />
+  </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="Z:\OneDrive - Schönherz Zoltán Kollégium\Egyetem\2022-23 1. (osz)\Szakdoga\Poisoning\files\poison_data" />
       <recent name="Z:\OneDrive - Schönherz Zoltán Kollégium\Egyetem\2022-23 1. (osz)\Szakdoga\Poisoning\files\mips_datasets" />
       <recent name="Z:\OneDrive - Schönherz Zoltán Kollégium\Egyetem\2022-23 1. (osz)\Szakdoga\Poisoning\files\arm_datasets" />
     </key>
+  </component>
+  <component name="RunManager" selected="Python.poisoner">
+    <configuration name="hasher" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Poisoning" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hasher.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="poisoner" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Poisoning" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/bin/python3.9" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/poisoner.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.hasher" />
+      <item itemvalue="Python.poisoner" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -109,6 +136,7 @@
       <workItem from="1664976002025" duration="3113000" />
       <workItem from="1665428647008" duration="8496000" />
       <workItem from="1665474378121" duration="2556000" />
+      <workItem from="1665479554393" duration="361000" />
     </task>
     <task id="LOCAL-00001" summary="Real Initial Commit">
       <created>1664976667677</created>
@@ -130,13 +158,28 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
     <MESSAGE value="Real Initial Commit" />
     <MESSAGE value="Poisoning with more precise dataset files" />
     <option name="LAST_COMMIT_MESSAGE" value="Poisoning with more precise dataset files" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Poisoning$poisoner.coverage" NAME="poisoner Coverage Results" MODIFIED="1665479882732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
