@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8cb6b456-2bcf-4071-98f6-7cf154a95a31" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/hasher.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/poisoner.py" afterDir="false" />
+    <list default="true" id="8cb6b456-2bcf-4071-98f6-7cf154a95a31" name="Changes" comment="Filenamer">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Poisoning.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Poisoning.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poisoning_arm.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Poisoning_arm.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hasher.py" beforeDir="false" afterPath="$PROJECT_DIR$/hasher.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,11 +49,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/poisoner.py" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="Z:\OneDrive - Schönherz Zoltán Kollégium\Egyetem\2022-23 1. (osz)\Szakdoga\Poisoning\files\poison_data" />

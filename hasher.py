@@ -26,12 +26,16 @@ def framer(dirname, bit):
 
     hashlist = []
 
-    for path in pathlist:
-        path_in_str = str(path)
-        if (not os.path.isdir(path_in_str)):
-            with open(path_in_str, "rb") as f:
-                hash = str(tlsh.hash(f.read()))
-                hashlist.append(featurer(hash, path_in_str.split("/")[-1], bit))
+    namefile = dirname.split("/")[-2:]
+    namefile = str(namefile[1]) + "_" + str(namefile[0]) + ".txt"
+    with open(namefile) as filenames:
+        for path in pathlist:
+            path_in_str = str(path)
+            if (not os.path.isdir(path_in_str)):
+                filenames.write(path_in_str.split("/")[-1] + "\n")
+                with open(path_in_str, "rb") as f:
+                    hash = str(tlsh.hash(f.read()))
+                    hashlist.append(featurer(hash, path_in_str.split("/")[-1], bit))
     return pd.DataFrame(hashlist).sample(frac=1)
 
 
