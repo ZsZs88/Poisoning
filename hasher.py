@@ -27,8 +27,8 @@ def framer(dirname, bit):
     hashlist = []
 
     namefile = dirname.split("/")[-2:]
-    namefile = str(namefile[1]) + "_" + str(namefile[0]) + ".txt"
-    with open(namefile) as filenames:
+    namefile = "files/filenames/" + str(namefile[1]) + "_" + str(namefile[0]) + ".txt"
+    with open(namefile, "w") as filenames:
         for path in pathlist:
             path_in_str = str(path)
             if (not os.path.isdir(path_in_str)):
