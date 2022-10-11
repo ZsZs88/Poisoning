@@ -5,9 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8cb6b456-2bcf-4071-98f6-7cf154a95a31" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Poisoning.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Poisoning.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/arm_attacker_test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/arm_datasets/arm_attacker_test.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/arm_attacker_training.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/arm_datasets/arm_attacker_training.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/arm_attacker_validation.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/arm_datasets/arm_attacker_validation.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/arm_victim_test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/arm_datasets/arm_victim_test.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/arm_victim_training.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/arm_datasets/arm_victim_training.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/arm_victim_validation.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/arm_datasets/arm_victim_validation.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/benign_arm.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/benign_mips.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/int_benign_arm.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/int_benign_mips.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/int_malware_arm.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/int_malware_mips.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/malware_arm.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/malware_mips.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/mips_attacker_test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/mips_datasets/mips_attacker_test.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/mips_attacker_training.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/mips_datasets/mips_attacker_training.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/mips_attacker_validation.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/mips_datasets/mips_attacker_validation.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/mips_victim_test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/mips_datasets/mips_victim_test.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/mips_victim_training.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/mips_datasets/mips_victim_training.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/mips_victim_validation.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/mips_datasets/mips_victim_validation.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/poisoned_benign_malware100.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/poison_data/poisoned_benign_malware100.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/poisoned_malware_benign100.csv" beforeDir="false" afterPath="$PROJECT_DIR$/files/poison_data/poisoned_malware_benign100.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,17 +65,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;Z:/OneDrive - Schönherz Zoltán Kollégium/Egyetem/2022-23 1. (osz)/Szakdoga/Poisoning&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.notebooks.jupyter.connections.configuration.JupyterServerConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "Z:/OneDrive - Schönherz Zoltán Kollégium/Egyetem/2022-23 1. (osz)/Szakdoga/Poisoning/files/arm_datasets",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.notebooks.jupyter.connections.configuration.JupyterServerConfigurable"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="Z:\OneDrive - Schönherz Zoltán Kollégium\Egyetem\2022-23 1. (osz)\Szakdoga\Poisoning\files\poison_data" />
+      <recent name="Z:\OneDrive - Schönherz Zoltán Kollégium\Egyetem\2022-23 1. (osz)\Szakdoga\Poisoning\files\mips_datasets" />
+      <recent name="Z:\OneDrive - Schönherz Zoltán Kollégium\Egyetem\2022-23 1. (osz)\Szakdoga\Poisoning\files\arm_datasets" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -80,7 +108,7 @@
       <workItem from="1664975923884" duration="53000" />
       <workItem from="1664976002025" duration="3113000" />
       <workItem from="1665428647008" duration="8496000" />
-      <workItem from="1665474378121" duration="2245000" />
+      <workItem from="1665474378121" duration="2556000" />
     </task>
     <task id="LOCAL-00001" summary="Real Initial Commit">
       <created>1664976667677</created>
@@ -89,17 +117,26 @@
       <option name="project" value="LOCAL" />
       <updated>1664976667677</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Poisoning with more precise dataset files">
+      <created>1665478915821</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1665478915821</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_NEW_TODO" value="false" />
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
     <MESSAGE value="Real Initial Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Real Initial Commit" />
+    <MESSAGE value="Poisoning with more precise dataset files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Poisoning with more precise dataset files" />
   </component>
 </project>
