@@ -1,10 +1,11 @@
 import os
 from pathlib import Path
-
+import sklearn.preprocessing as sklp
 import pandas as pd
 import tlsh
 
-def featurer(hash, filename, bit):
+
+def featurer(hash, filename="N\A", bit=1):
     hash = hash[4:]
     hash_bin_str = (bin(int(hash, base=16))[2:]).zfill(len(hash) * 4)
     featurelist = []
@@ -18,6 +19,7 @@ def featurer(hash, filename, bit):
     featurelist.append(filename)
     featurelist.append(bit)
     return featurelist
+
 
 def framer(dirname, bit):
     pathlist = Path(dirname).rglob('*')
@@ -41,4 +43,9 @@ def concatenator(file1, file2, bit, byte1=-1, byte2=-1):
     with open(file1, "rb") as f1:
         with open(file2, "rb") as f2:
             # print(file1, file2)
-            return featurer(str(tlsh.hash(f1.read(byte1) + f2.read(byte2))), str(file1).split("\\")[-1] + "_" + str(file2).split("\\")[-1], bit)
+            return featurer(str(tlsh.hash(f1.read(byte1) + f2.read(byte2))),
+                            str(file1).split("\\")[-1] + "_" + str(file2).split("\\")[-1], bit)
+
+
+def normalize(dataset):
+    return sklp.normalize(dataset, norm="l2", axis=0)
