@@ -16,13 +16,10 @@ from tensorflow import keras
 from keras import layers
 
 malwareTLSH = ""
-filename = ""
-
+mybytes = ""
 
 def myfunc(solution):
-    with open(filenames.dir_bening_arm + filename, "rb") as benign:
-        mybytes = benign.read()
-        additional = np.array(solution).tobytes()
+    additional = np.array(solution).tobytes()
     return str(tlsh.hash(mybytes + additional))
 
 def fitness_func(solution, solution_idx):
@@ -40,22 +37,27 @@ init_range_high = 255
 stop_criteria = "saturate_200"
 
 I = 84
+percents = np.append(np.arange(0.5, 5.1, 0.5), [10, 20])
 
 with open(filenames.poisonJSON) as poison_json:
     poison = json.load(poison_json)
     with open(filenames.dir_malware_arm + str(poison["arm"]["malware"][I]), "rb") as malware:
         malwareread = malware.read()
         malwareTLSH = str(tlsh.hash(malwareread))
-    with open("{}genetic_idx-{}_bening-20.csv".format(filenames.dir_results, I), "w") as results_file:
+    with open("{}genetic_idx-{}_bening-20_percent-0.5--5-10-20.csv".format(filenames.dir_results, I), "w") as results_file:
         csv_writer_r = csv.writer(results_file, lineterminator="\n")
-        for num_genes in range(10, 101, 10):
+        for percent in percents:
         # for num_genes in range(10, 101, 10):
-            print("-------------" + str(num_genes) + "-------------")
-            with open(filenames.dir_poison_data_genetic + "genes_" + str(num_genes) + ".csv", "w") as f:
+            print("-------------" + str(percent) + "-------------")
+            with open(filenames.dir_poison_data_genetic + "percent_" + str(percent) + ".csv", "w") as f:
                 csv_writer = csv.writer(f, lineterminator="\n")
                 for i in range(20):
                     print("*{}*".format(i))
                     filename = str(poison["arm"]["benign"][i])
+                    with open(filenames.dir_bening_arm + filename, "rb") as benign:
+                        mybytes = benign.read()
+                    lenbytes = len(mybytes)
+                    num_genes = int(lenbytes * percent / 100)
                     ga = pygad.GA(num_generations=num_generations,
                                   num_parents_mating=num_parents_mating,
                                   fitness_func=fitness_func,
@@ -74,7 +76,7 @@ with open(filenames.poisonJSON) as poison_json:
                     csv_writer.writerow(featurer(myfunc(best_solution)))
 
 
-            file_poison_arm_BM = filenames.dir_poison_data_genetic + "genes_" + str(num_genes) + ".csv"
+            file_poison_arm_BM = filenames.dir_poison_data_genetic + "percent_" + str(percent) + ".csv"
             poisoned_arm_training = pd.read_csv(file_poison_arm_BM, index_col=False, header=None)
 
             poisoned_arm_training_base = poisoned_arm_training.sample(frac=1)
@@ -92,11 +94,11 @@ with open(filenames.poisonJSON) as poison_json:
             base_model = keras.models.load_model(filenames.base_model)
             base_model.fit(dataset_poisoned_arm_training_base, labels_poisoned_arm_training_base, epochs=10, batch_size=init.BATCH_SIZE,
                            validation_data=(init.dataset_arm_validation, init.labels_arm_validation), verbose=0)
-            [_, binary_accuracy_appended] = base_model.evaluate(init.dataset_arm_test, init.labels_arm_test)
+            [_, binary_accuracy_appended] = base_model.evaluate(init.dataset_arm_test, init.labels_arm_test, verbose=0)
             # print(binary_accuracy_appended)
-            base_model.save(filenames.models_iterative + "modified" + str(num_genes))
+            # base_model.save(filenames.models_iterative + "modified" + str(num_genes))
 
-            [[predict_appended]] = base_model.predict(init.topredict)
+            [[predict_appended]] = base_model.predict(init.topredict, verbose=0)
             # print(predict_appended)
 
             # NEW
@@ -109,14 +111,14 @@ with open(filenames.poisonJSON) as poison_json:
                                  metrics=[tf.keras.metrics.BinaryAccuracy()])
             poison_model.fit(dataset_poisoned_arm_training_new, labels_poisoned_arm_training_new, epochs=10, batch_size=init.BATCH_SIZE,
                              validation_data=(init.dataset_arm_validation, init.labels_arm_validation), verbose=0)
-            [_, binary_accuracy_new] = poison_model.evaluate(init.dataset_arm_test, init.labels_arm_test)
+            [_, binary_accuracy_new] = poison_model.evaluate(init.dataset_arm_test, init.labels_arm_test, verbose=0)
             # print(binary_accuracy_appended)
-            base_model.save(filenames.models_iterative + "poison" + str(num_genes))
+            # base_model.save(filenames.models_iterative + "poison" + str(num_genes))
 
-            [[predict_new]] = poison_model.predict(init.topredict)
+            [[predict_new]] = poison_model.predict(init.topredict, verbose=0)
             # print(predict_new)
 
-            results = [num_genes,
+            results = [percent,
                        binary_accuracy_appended,
                        predict_appended,
                        binary_accuracy_new,
