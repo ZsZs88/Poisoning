@@ -30,21 +30,23 @@ def fitness_func(solution, solution_idx):
     return 1 / tlsh.diff(malwareTLSH, poisonedTLSH)
 
 
-num_generations = 100
-num_parents_mating = 4
+num_generations = 500
+num_parents_mating = 8
 sol_per_pop = 20
 # num_genes = 20
 gene_type = numpy.uint8
 init_range_low = 0
 init_range_high = 255
-stop_criteria = "saturate_20"
+stop_criteria = "saturate_200"
+
+I = 84
 
 with open(filenames.poisonJSON) as poison_json:
     poison = json.load(poison_json)
-    with open(filenames.dir_malware_arm + str(poison["arm"]["malware"][init.MALWAREIDX]), "rb") as malware:
+    with open(filenames.dir_malware_arm + str(poison["arm"]["malware"][I]), "rb") as malware:
         malwareread = malware.read()
         malwareTLSH = str(tlsh.hash(malwareread))
-    with open(filenames.results_genetic, "w") as results_file:
+    with open("{}genetic_idx-{}_bening-20.csv".format(filenames.dir_results, I), "w") as results_file:
         csv_writer_r = csv.writer(results_file, lineterminator="\n")
         for num_genes in range(10, 101, 10):
         # for num_genes in range(10, 101, 10):
@@ -52,6 +54,7 @@ with open(filenames.poisonJSON) as poison_json:
             with open(filenames.dir_poison_data_genetic + "genes_" + str(num_genes) + ".csv", "w") as f:
                 csv_writer = csv.writer(f, lineterminator="\n")
                 for i in range(20):
+                    print("*{}*".format(i))
                     filename = str(poison["arm"]["benign"][i])
                     ga = pygad.GA(num_generations=num_generations,
                                   num_parents_mating=num_parents_mating,
@@ -61,7 +64,7 @@ with open(filenames.poisonJSON) as poison_json:
                                   gene_type=gene_type,
                                   init_range_low=init_range_low,
                                   init_range_high=init_range_high,
-                                  stop_criteria=stop_criteria
+                                  # stop_criteria=stop_criteria
                                   )
                     ga.run()
                     # ga.plot_fitness()
@@ -88,7 +91,7 @@ with open(filenames.poisonJSON) as poison_json:
             # MODIFIED
             base_model = keras.models.load_model(filenames.base_model)
             base_model.fit(dataset_poisoned_arm_training_base, labels_poisoned_arm_training_base, epochs=10, batch_size=init.BATCH_SIZE,
-                           validation_data=(init.dataset_arm_validation, init.labels_arm_validation))
+                           validation_data=(init.dataset_arm_validation, init.labels_arm_validation), verbose=0)
             [_, binary_accuracy_appended] = base_model.evaluate(init.dataset_arm_test, init.labels_arm_test)
             # print(binary_accuracy_appended)
             base_model.save(filenames.models_iterative + "modified" + str(num_genes))
@@ -105,7 +108,7 @@ with open(filenames.poisonJSON) as poison_json:
             poison_model.compile(loss=tf.keras.losses.BinaryCrossentropy(),
                                  metrics=[tf.keras.metrics.BinaryAccuracy()])
             poison_model.fit(dataset_poisoned_arm_training_new, labels_poisoned_arm_training_new, epochs=10, batch_size=init.BATCH_SIZE,
-                             validation_data=(init.dataset_arm_validation, init.labels_arm_validation))
+                             validation_data=(init.dataset_arm_validation, init.labels_arm_validation), verbose=0)
             [_, binary_accuracy_new] = poison_model.evaluate(init.dataset_arm_test, init.labels_arm_test)
             # print(binary_accuracy_appended)
             base_model.save(filenames.models_iterative + "poison" + str(num_genes))
@@ -118,6 +121,6 @@ with open(filenames.poisonJSON) as poison_json:
                        predict_appended,
                        binary_accuracy_new,
                        predict_new]
-            # print(results)
+            print(results)
 
             csv_writer_r.writerow(results)

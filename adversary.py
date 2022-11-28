@@ -32,53 +32,53 @@ def fitness_func(solution, solution_idx):
 
 mybytes = ""
 
-with open (filenames.dir_results + "adversary_genetic_200gen.csv", "w") as f:
-    csv_writer = csv.writer(f, lineterminator = "\n")
-    with open(filenames.poisonJSON) as poison_json:
-        poison = json.load(poison_json)
-        db = 0
-        i = 0
-        while db < 20:
-            malware_file_name = str(poison["arm"]["malware"][i])
-            with open(filenames.dir_malware_arm + malware_file_name, "rb") as malware:
-                mybytes = malware.read()
-            i += 1
+percents = np.append(np.arange(0.5, 5.1, 0.5), [10, 20])
 
-            lenbytes = len(mybytes)
-            if lenbytes < 5000:
-                pass
-            else:
-                db += 1
+with open(filenames.poisonJSON) as poison_json:
+    poison = json.load(poison_json)
+    I = 135
+    with open (filenames.dir_results + "adversary_genetic_2000gen{}.csv".format(I), "w") as f:
+        csv_writer = csv.writer(f, lineterminator = "\n")
 
-            model = keras.models.load_model(filenames.base_model)
+        malware_file_name = str(poison["arm"]["malware"][I])
+        with open(filenames.dir_malware_arm + malware_file_name, "rb") as malware:
+            mybytes = malware.read()
 
-            [[pred]] = model.predict(np.asarray([tools.featurer(tlsh.hash(mybytes))[:-2],]))
-            print(pred)
+        lenbytes = len(mybytes)
+        model = keras.models.load_model(filenames.base_model)
 
-            num_generations = 200
-            num_parents_mating = 8
-            sol_per_pop = 20
-            # num_genes = 1440
-            gene_type = numpy.uint8
-            init_range_low = 0
-            init_range_high = 255
-            stop_criteria = "saturate_200"
+        [[pred]] = model.predict(np.asarray([tools.featurer(tlsh.hash(mybytes))[:-2],]))
+        print(pred)
 
-            for percent in np.arange(0.5, 5.5, 0.5):
-                num_genes = int(lenbytes * percent / 100)
-                print("-------------" + str(num_genes) + "-------------")
-                ga = pygad.GA(num_generations=num_generations,
-                              num_parents_mating=num_parents_mating,
-                              fitness_func=fitness_func,
-                              sol_per_pop=sol_per_pop,
-                              num_genes=num_genes,
-                              gene_type=gene_type,
-                              init_range_low=init_range_low,
-                              init_range_high=init_range_high,
-                              # stop_criteria=stop_criteria
-                          )
-                ga.run()
-                ga.plot_fitness()
-                best_solution, best_fitness, best_idx = ga.best_solution()
-                # print(best_solution, " - ", best_fitness)
-                csv_writer.writerow([malware_file_name, lenbytes, percent, best_fitness])
+        num_generations = 2000
+        num_parents_mating = 8
+        sol_per_pop = 20
+        # num_genes = 1440
+        gene_type = numpy.uint8
+        init_range_low = 0
+        init_range_high = 255
+        stop_criteria = "saturate_200"
+
+        # for percent in percents:
+        #     num_genes = int(lenbytes * percent / 100)
+        # for num_genes in range(100, 1001, 200):
+        #     percent = num_genes / lenbytes * 100
+        percent = 10
+        num_genes = int(lenbytes * percent / 100)
+        print("-------------" + str(num_genes) + "-------------")
+        ga = pygad.GA(num_generations=num_generations,
+                      num_parents_mating=num_parents_mating,
+                      fitness_func=fitness_func,
+                      sol_per_pop=sol_per_pop,
+                      num_genes=num_genes,
+                      gene_type=gene_type,
+                      init_range_low=init_range_low,
+                      init_range_high=init_range_high,
+                      # stop_criteria=stop_criteria
+                  )
+        ga.run()
+        ga.plot_fitness()
+        best_solution, best_fitness, best_idx = ga.best_solution()
+        # print(best_solution, " - ", best_fitness)
+        print([malware_file_name, lenbytes, percent, best_fitness])
+        csv_writer.writerow([malware_file_name, lenbytes, percent, best_fitness])

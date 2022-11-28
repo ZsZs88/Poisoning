@@ -9,7 +9,7 @@ from keras import layers
 
 import filenames
 
-MALWAREIDX = 0
+MALWAREIDX = 32
 BATCH_SIZE = 10
 
 arm_training = pd.read_csv(filenames.arm_training, header=None, index_col=False)
