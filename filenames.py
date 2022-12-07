@@ -1,9 +1,11 @@
-dir_malware_arm = "Z:\\\\Suli\\MalwarePack\\ml-sample-pack-small\\malware\\arm\\"
-dir_malware_mips = "Z:\\\\Suli\\MalwarePack\\ml-sample-pack-small\\malware\\mips\\"
-dir_bening_arm = "Z:\\\\Suli\\MalwarePack\\ml-sample-pack-small\\benign\\arm\\"
-dir_bening_mips = "Z:\\\\Suli\\MalwarePack\\ml-sample-pack-small\\benign\\mips\\"
+dir_mlpack = "Z:\\\\Suli\\MalwarePack\\ml-sample-pack-small\\"
 
-dir_results = "files\\results\\"
+dir_malware_arm = dir_mlpack + "malware\\arm\\"
+dir_malware_mips = dir_mlpack + "malware\\mips\\"
+dir_bening_arm = dir_mlpack + "benign\\arm\\"
+dir_bening_mips = dir_mlpack + "benign\\mips\\"
+
+dir_results = "files\\results\\new\\"
 results_iterative = dir_results + "iterative.csv"
 results_genetic = dir_results + "genetic.csv"
 
@@ -36,3 +38,6 @@ base_model = dir_models + "base_model"
 models_iterative = dir_models + "iterative\\"
 models_genetic = dir_models + "genetic\\"
 
+dir_aggregated = dir_results + "aggregated\\"
+
+predictions = "files\\predictions.csv"

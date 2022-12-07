@@ -14,18 +14,18 @@ from keras import layers
 
 with open(filenames.poisonJSON) as poison_json:
     poison = json.load(poison_json)
-    I = 84
-    percents = np.append(np.arange(0.5, 5.1, 0.5), [10, 20])
+    # percents = np.append(np.arange(0.5, 5.1, 0.5), [10, 20])
+    percents = [5, 10, 20]
     for number in range(10, 101, 10):
-        with open(filenames.dir_results + "iterative_idx-" + str(I) + "_benignnumber-" + str(number) + "_percent-0.5-5-10-20.csv", "w") as result_file:
+        with open(filenames.dir_results + "iterative_idx-" + str(init.MALWAREIDX) + "_benignnumber-" + str(number) + "_percent-5-10-20.csv", "w") as result_file:
             csv_writer_r = csv.writer(result_file, lineterminator="\n")
             # for byte in range(1000, 101001, 10000):
             for percent in percents:
-                print("-------------" + str(number) + "." + str(percent) + "-------------")
+                print("*{} - {}%*".format(number, percent))
                 with open(filenames.dir_poison_data_iterative + "poisoned_benign_malware_" + str(percent) + ".csv", "w") as f:
                     # with open("files\\poison_data\\poisoned_benign_malware.csv", "w") as f:
                     csv_writer = csv.writer(f, lineterminator="\n")
-                    malware = filenames.dir_malware_arm + str(poison["arm"]["malware"][I])
+                    malware = filenames.dir_malware_arm + str(poison["arm"]["malware"][init.MALWAREIDX])
                     for i in range(number):
                         benign = filenames.dir_bening_arm + str(poison["arm"]["benign"][i])
                         with open(benign, "rb") as benignfile:

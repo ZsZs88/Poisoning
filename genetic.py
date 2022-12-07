@@ -36,23 +36,22 @@ init_range_low = 0
 init_range_high = 255
 stop_criteria = "saturate_200"
 
-I = 84
-percents = np.append(np.arange(0.5, 5.1, 0.5), [10, 20])
+# percents = np.append(np.arange(0.5, 5.1, 0.5), [10, 20])
+percents = [5, 10, 20]
 
 with open(filenames.poisonJSON) as poison_json:
     poison = json.load(poison_json)
-    with open(filenames.dir_malware_arm + str(poison["arm"]["malware"][I]), "rb") as malware:
+    with open(filenames.dir_malware_arm + str(poison["arm"]["malware"][init.MALWAREIDX]), "rb") as malware:
         malwareread = malware.read()
         malwareTLSH = str(tlsh.hash(malwareread))
-    with open("{}genetic_idx-{}_bening-20_percent-0.5--5-10-20.csv".format(filenames.dir_results, I), "w") as results_file:
+    with open("{}genetic_idx-{}_bening-20_percent-5-10-20.csv".format(filenames.dir_results, init.MALWAREIDX), "w") as results_file:
         csv_writer_r = csv.writer(results_file, lineterminator="\n")
         for percent in percents:
         # for num_genes in range(10, 101, 10):
-            print("-------------" + str(percent) + "-------------")
             with open(filenames.dir_poison_data_genetic + "percent_" + str(percent) + ".csv", "w") as f:
                 csv_writer = csv.writer(f, lineterminator="\n")
                 for i in range(20):
-                    print("*{}*".format(i))
+                    print("*{}% - {}*".format(percent, i))
                     filename = str(poison["arm"]["benign"][i])
                     with open(filenames.dir_bening_arm + filename, "rb") as benign:
                         mybytes = benign.read()
@@ -66,7 +65,7 @@ with open(filenames.poisonJSON) as poison_json:
                                   gene_type=gene_type,
                                   init_range_low=init_range_low,
                                   init_range_high=init_range_high,
-                                  # stop_criteria=stop_criteria
+                                  stop_criteria=stop_criteria
                                   )
                     ga.run()
                     # ga.plot_fitness()

@@ -1,0 +1,6 @@
+numpy
+pandas
+tensorflow
+pygad
+py-tlsh
+scikit-learn

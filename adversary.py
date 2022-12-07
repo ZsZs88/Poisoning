@@ -2,20 +2,12 @@ import csv
 
 import numpy
 import numpy as np
-import pandas as pd
 import pygad
 import tlsh
 import json
 import filenames
-import init
 import tools
-from tools import normalize
-from tools import featurer
-
-import tensorflow as tf
 from tensorflow import keras
-from keras import layers
-
 
 def myfunc(solution):
     additional = np.array(solution).tobytes()
